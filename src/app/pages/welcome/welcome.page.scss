@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Monoton&family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+ion-content {
+  --background: rgba(255, 255, 255, 0.859);
+  // --background: linear-gradient(180deg, rgba(255, 255, 255, 0) 35%, rgba(45, 74, 159, 0.482) 100%);
+}
+
+form {
+  margin-top: 10%;
+}
+
+ion-item {
+  --background: rgba(0, 0, 0, 0);
+  font-weight: bolder;
+  color: #000;
+}
+
+.logo-header {
+  height: 20%;
+}
+
+.logo-header img {
+  height: 100%;
+}
+
+.header-header {
+  font-family: 'Poiret One', cursive;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.center {
+  height: 10%;
+  font-size: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-header {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-header-bad {
+  font-weight: bold;
+  text-decoration: line-through;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 10%;
+}
+
+.passwordreset {
+  margin-top: 10%;
+}
+
+ion-button {
+  font-size: 16px;
+  height: 45px;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  margin-top: 5%;
+  justify-content: center;
+}
+
+.options img {
+  height: 25px;
+  margin: 0px 10px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.options img:active {
+  transform: scale(1.5);
+}
+
+

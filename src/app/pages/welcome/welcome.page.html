@@ -1,0 +1,30 @@
+<ion-content>
+  <div class="logo-header">
+    <img src="../../../assets/headers/jobs-rus-4.png" alt="">
+  </div>
+
+  <div class="header-header">JobsRUS</div>
+
+  <form class="ion-margin" (ngSubmit)="authService.signIn(null, user.email, user.password)">
+    <ion-item>
+      <ion-input [(ngModel)]='user.email' [ngModelOptions]="{standalone: true}" placeholder='Enter Email' type='email' clearInput></ion-input>
+      <ion-icon name="mail" slot="start"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]='user.password' [ngModelOptions]="{standalone: true}" placeholder='Enter Password' type='password' clearInput></ion-input>
+      <ion-icon name="lock-closed" slot="start"></ion-icon>
+    </ion-item>
+
+    <div class="button-container">
+      <ion-button expand='block' type="submit" color='primary'>Log in</ion-button>
+    </div>
+  </form>
+
+  <div class="options">
+    <img (click)="authService.signIn('google', null, null)" src="../../../assets/accounts-icons/google-4.svg" alt="">
+    <img (click)="authService.signIn('twitter', null, null)" src="../../../assets/accounts-icons/twitter.svg" alt="">
+    <img (click)="authService.signIn('facebook', null, null)" src="../../../assets/accounts-icons/facebook.png" alt="">
+  </div>
+
+</ion-content>
