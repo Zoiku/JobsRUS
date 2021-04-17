@@ -16,23 +16,25 @@
       <ion-icon name="lock-closed" slot="start"></ion-icon>
     </ion-item>
 
+    <ion-item lines='none'>
+      <small slot="end"><ion-text class="forgot-password" routerLink='/passwordreset'>Forgot your password?</ion-text></small>
+    </ion-item>
+
     <div class="button-container">
       <ion-button expand='block' type="submit" color='primary'>Log in</ion-button>
     </div>
   </form>
 
+  <small class="center">- Or sign in with -</small>
   <div class="options">
     <img (click)="authService.signIn('google', null, null)" src="../../../assets/accounts-icons/google-4.svg" alt="">
     <img (click)="authService.signIn('twitter', null, null)" src="../../../assets/accounts-icons/twitter.svg" alt="">
     <img (click)="authService.signIn('facebook', null, null)" src="../../../assets/accounts-icons/facebook.png" alt="">
   </div>
-
-  <a class="center forgot-password" routerLink='/passwordreset'>Forgot your password?</a>
-
 </ion-content>
 
 <ion-footer class="ion-no-border">
   <ion-toolbar>
-    <a class="center create-account" routerLink='/registration'>Create new account here !</a>
+    <div class="create-account center"> Don't have an account? <a routerLink='/registration'> Sign up </a></div>
   </ion-toolbar>
 </ion-footer>

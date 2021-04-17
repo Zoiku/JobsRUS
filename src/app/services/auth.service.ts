@@ -17,6 +17,9 @@ export class AuthService {
 
   signUp(email:string, password:string) {
     this.auth.createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        // this.auth.
+      })
       .catch(err => err)
   }
 
@@ -47,5 +50,13 @@ export class AuthService {
   signOut() {
     this.auth.signOut()
       .catch(err => err)
+  }
+
+  resetPassword(email:string) {
+    this.auth.sendPasswordResetEmail(email)
+    .then(()=> {
+      alert('Password reset link has been sent to your email');
+    })
+      .catch(err => console.error(err))
   }
 }

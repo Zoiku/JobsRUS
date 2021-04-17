@@ -1,0 +1,30 @@
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo-header {
+    height: 20%;
+    text-align: center;
+}
+
+.logo-header img {
+    height: 100%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.header {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5% 0%;
+}
+
+ion-button {
+    margin-top: 10%;
+}

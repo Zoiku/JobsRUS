@@ -1,9 +1,45 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>registration</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="logo-header ion-margin-top">
+    <img src="../../../assets/headers/jobs-rus-1.png" alt="">
+  </div>
+
+  <div class="header center ion-margin">Create Account</div>
+
+  <form class="ion-margin" (ngSubmit)='this.auth.signUp(user.email, user.password)'>
+    <ion-item class="ion-margin-top">
+      <ion-label position='stacked'>First Name</ion-label>
+      <ion-input [(ngModel)]='user.firstname' [ngModelOptions]="{standalone: true}" type='text' clearInput></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-top">
+      <ion-label position='stacked'>Last Name</ion-label>
+      <ion-input [(ngModel)]='user.lastname' [ngModelOptions]="{standalone: true}" type='text' clearInput></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-top">
+      <ion-label position='stacked'>Email</ion-label>
+      <ion-input [(ngModel)]='user.email' [ngModelOptions]="{standalone: true}" type='text' clearInput></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-top">
+      <ion-label position='stacked'>Password</ion-label>
+      <ion-input [(ngModel)]='user.password' [ngModelOptions]="{standalone: true}" type='text' clearInput></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-top">
+      <ion-label position='stacked'>Location</ion-label>
+      <ion-input [(ngModel)]='user.location' [ngModelOptions]="{standalone: true}" type='text' clearInput></ion-input>
+    </ion-item>
+
+    <ion-button class="ion-margin-top" expand='block'>Create Account</ion-button>
+  </form>
 
 </ion-content>

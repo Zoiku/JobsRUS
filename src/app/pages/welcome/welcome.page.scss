@@ -1,21 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Monoton&family=Poiret+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-
 * {
   font-family: 'Poppins', sans-serif;
 }
 
-ion-content {
-  --background: rgba(255, 255, 255, 0.859);
-  // --background: linear-gradient(180deg, rgba(255, 255, 255, 0) 35%, rgba(45, 74, 159, 0.482) 100%);
-}
 
 form {
   margin-top: 10%;
 }
 
 ion-item {
-  --background: rgba(0, 0, 0, 0);
   font-weight: bolder;
   color: #000;
 }
@@ -43,8 +35,10 @@ ion-item {
   justify-content: center;
   align-items: center;
 }
+
 .forgot-password {
   margin-top: 5%;
+  cursor: pointer;
 }
 
 .create-account {
@@ -96,5 +90,12 @@ ion-button {
   transform: scale(1.5);
 }
 
+.create-account {
+  font-size: small;
+}
 
-
+a {
+  margin-left: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}

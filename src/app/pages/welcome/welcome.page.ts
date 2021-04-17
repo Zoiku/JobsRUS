@@ -10,8 +10,13 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class WelcomePage implements OnInit {
   user:User = {
+    firstname: '',
+    lastname: '',
+    name: '',
     email: '',
-    password: ''
+    password: '',
+    emailVerified: false,
+    location: ''
   };
 
   constructor(private authService:AuthService, private auth: AngularFireAuth) {}
