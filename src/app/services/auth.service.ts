@@ -7,20 +7,12 @@ import  firebase from 'firebase/app';
 })
 
 export class AuthService {
-  currentUser:firebase.User;
 
-  constructor(private auth: AngularFireAuth) {
-    auth.onAuthStateChanged(user => {
-      this.currentUser = user;
-    })
-  }
+  constructor(private auth: AngularFireAuth) {}
 
   signUp(email:string, password:string) {
     this.auth.createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        // this.auth.
-      })
-      .catch(err => err)
+    .catch(err => err)
   }
 
   signIn(provider:string, email:string, password:string) {
@@ -32,18 +24,18 @@ export class AuthService {
           .then(() => {
             if(provider === 'google') {
               this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider)
-                .catch(err => err)
+              .catch(err => err)
             }
             if(provider === 'twitter') {
               this.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider)
-                .catch(err => err)
+              .catch(err => err)
             }
             if(provider === 'facebook') {
               this.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider)
-                .catch(err => err)
+              .catch(err => err)
             }
           })
-          .catch(err => err)
+        .catch(err => err)
       }
   }
 
@@ -57,6 +49,6 @@ export class AuthService {
     .then(()=> {
       alert('Password reset link has been sent to your email');
     })
-      .catch(err => console.error(err))
+      .catch(err => err)
   }
 }

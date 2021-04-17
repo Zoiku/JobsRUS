@@ -1,0 +1,18 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.welcome-area {
+    height: 15%;
+    background-color: rgb(72, 97, 194);
+    color: #fff;
+    position: relative;
+}
+
+.welcome-area header {
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}

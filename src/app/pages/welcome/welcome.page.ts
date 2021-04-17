@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { User } from '../../interfaces/user';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
@@ -19,14 +20,19 @@ export class WelcomePage implements OnInit {
     location: ''
   };
 
-  constructor(private authService:AuthService, private auth: AngularFireAuth) {}
+  constructor(private authService:AuthService, private auth:AngularFireAuth, private router:Router, private zone:NgZone) {}
 
   ngOnInit() {
     this.auth.onAuthStateChanged(user => {
       if(user) {
-        console.log(user)
-      } else {
-        console.log('Sign in to view user information')
+        this.zone.run(() => {
+          this.router.navigate(['/home'])
+        })
+      }
+      else {
+        this.zone.run(() => {
+          this.router.navigate(['/welcome'])
+        })
       }
     })
   }
