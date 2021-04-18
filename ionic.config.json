@@ -1,5 +1,7 @@
 {
   "name": "JobsRUS",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

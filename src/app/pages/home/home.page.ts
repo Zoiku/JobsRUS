@@ -1,6 +1,5 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
-  constructor(private auth: AngularFireAuth, private authService: AuthService, private route:Router, private zone:NgZone) {}
+  user:string = '';
+
+  constructor(private auth: AngularFireAuth, private route:Router, private zone:NgZone) {}
 
   ngOnInit() {
     this.auth.onAuthStateChanged(user => {
@@ -18,8 +19,9 @@ export class HomePage implements OnInit {
         this.zone.run(() => {
           this.route.navigate(['/welcome'])
         })
+      }else {
+        this.user = user.displayName;
       }
     })
   }
-
 }

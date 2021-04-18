@@ -1,11 +1,21 @@
 <ion-content>
   <div class="welcome-area">
-    <header class="ion-padding">Welcome User</header>
+    <header class="ion-padding">
+      Hello
+      <br><span>{{ user }}</span>
+    </header>
   </div>
 
-  <div class="dashboard">
-    
-  </div>
+  <ion-row class="ion-margin cards">
+    <ion-col>
+      <app-dash-cards></app-dash-cards>
+    </ion-col>
+    <ion-col>
+      <app-dash-cards></app-dash-cards>
+    </ion-col>
+  </ion-row>
 
+  <app-dashboard></app-dashboard>
 
+  <app-tabs></app-tabs>
 </ion-content>

@@ -19,6 +19,7 @@ export class WelcomePage implements OnInit {
     emailVerified: false,
     location: ''
   };
+  err_msg = '';
 
   constructor(private authService:AuthService, private auth:AngularFireAuth, private router:Router, private zone:NgZone) {}
 
@@ -29,11 +30,16 @@ export class WelcomePage implements OnInit {
           this.router.navigate(['/home'])
         })
       }
-      else {
-        this.zone.run(() => {
-          this.router.navigate(['/welcome'])
-        })
-      }
     })
+  }
+
+  emailSignIn() {
+    var error = document.getElementById('error');
+    this.authService.emailSignIn(this.user.email, this.user.password)
+      .then()
+      .catch(err => {
+        this.err_msg = err;
+        error.style.display = 'block';
+      })
   }
 }

@@ -1,0 +1,28 @@
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.dashboard-container {
+  height: 50%;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2), 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  text-decoration: dashed;
+  font-weight: bold;
+}
+
+.div {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
