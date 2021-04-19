@@ -14,13 +14,14 @@ export class HomePage implements OnInit {
   constructor(private auth: AngularFireAuth, private route:Router, private zone:NgZone) {}
 
   ngOnInit() {
-    this.auth.onAuthStateChanged(user => {
-      if(!user) {
-        this.zone.run(() => {
-          this.route.navigate(['/welcome'])
-        })
-      }else {
+    let currentuser = this.auth.onAuthStateChanged;
+    currentuser(user => {
+      if(user) {
         this.user = user.displayName;
+      } else {
+        this.zone.run(() => {
+          this.route.navigate(['/welcome']);
+        })
       }
     })
   }

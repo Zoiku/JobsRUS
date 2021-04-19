@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-dash-cards',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dash-cards.component.scss'],
 })
 export class DashCardsComponent implements OnInit {
-  title:string = '';
+  @Input() title:string;
+  @Input() figure:number;
+
   constructor() { }
 
   ngOnInit() {}
