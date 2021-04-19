@@ -15,8 +15,9 @@ export class RegistrationPage implements OnInit {
     email: '',
     password: '',
     emailVerified: false,
-    location: ''
+    telephone: ''
   }
+  password_confirmation:string = '';
 
   constructor(private auth: AuthService) { }
 

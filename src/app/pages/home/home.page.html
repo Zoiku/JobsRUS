@@ -1,12 +1,17 @@
 <ion-content>
+  
   <div class="welcome-area">
+    <ion-button fill='clear' color='light'> 
+      <ion-menu-button menu='main-menu'></ion-menu-button>
+    </ion-button>
+
     <header class="ion-padding">
       Hello
       <br><span>{{ user }}</span>
     </header>
   </div>
 
-  <ion-row class="cards ion-margin">
+  <ion-row class="cards-container">
     <ion-col>
       <app-dash-cards [title]="'Watch List'" [figure]="'3'"></app-dash-cards>
     </ion-col>

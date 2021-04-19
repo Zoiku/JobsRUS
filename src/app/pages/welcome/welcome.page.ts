@@ -17,7 +17,7 @@ export class WelcomePage implements OnInit {
     email: '',
     password: '',
     emailVerified: false,
-    location: ''
+    telephone: ''
   };
   err_msg = '';
 

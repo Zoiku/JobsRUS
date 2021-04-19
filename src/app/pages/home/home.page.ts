@@ -17,7 +17,11 @@ export class HomePage implements OnInit {
     let currentuser = this.auth.onAuthStateChanged;
     currentuser(user => {
       if(user) {
-        this.user = user.displayName;
+        if(!user.displayName) {
+          this.user = user.email;
+        } else {
+          this.user = user.displayName;
+        }
       } else {
         this.zone.run(() => {
           this.route.navigate(['/welcome']);

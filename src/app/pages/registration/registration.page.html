@@ -6,40 +6,54 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="logo-header ion-margin-top">
-    <img src="../../../assets/headers/jobs-rus-2.png" alt="">
+<ion-content class="ion-padding">
+  
+  <div class="header">Create Account</div>
+
+  <div class="sign-up-text">
+    Sign up to get started !
   </div>
 
-  <div class="header center ion-margin">Create Account</div>
-
-  <form class="ion-margin" (ngSubmit)="this.auth.signUp(user.email, user.password)">
-    <ion-item class="ion-margin-top">
+  <form (ngSubmit)="this.auth.signUp(user.email, user.password)">
+    <ion-item class="">
       <ion-label position='stacked'>First Name</ion-label>
       <ion-input [(ngModel)]='user.firstname' [ngModelOptions]="{standalone: true}" type='text' clearInput></ion-input>
     </ion-item>
 
-    <ion-item class="ion-margin-top">
+    <ion-item class="">
       <ion-label position='stacked'>Last Name</ion-label>
       <ion-input [(ngModel)]='user.lastname' [ngModelOptions]="{standalone: true}" type='text' clearInput></ion-input>
     </ion-item>
 
-    <ion-item class="ion-margin-top">
+    <ion-item class="">
       <ion-label position='stacked'>Email</ion-label>
       <ion-input [(ngModel)]='user.email' [ngModelOptions]="{standalone: true}" type='email' clearInput></ion-input>
     </ion-item>
 
-    <ion-item class="ion-margin-top">
+    <ion-item class="">
       <ion-label position='stacked'>Password</ion-label>
       <ion-input [(ngModel)]='user.password' [ngModelOptions]="{standalone: true}" type='password' clearInput></ion-input>
     </ion-item>
 
-    <ion-item class="ion-margin-top">
-      <ion-label position='stacked'>Location</ion-label>
-      <ion-input [(ngModel)]='user.location' [ngModelOptions]="{standalone: true}" type='text' clearInput></ion-input>
+    <ion-item class="">
+      <ion-label position='stacked'>Confirm Password</ion-label>
+      <ion-input [(ngModel)]='password_confirmation' [ngModelOptions]="{standalone: true}" type='password' clearInput></ion-input>
     </ion-item>
 
-    <ion-button class="ion-margin-top" type='submit' expand='block'>Create Account</ion-button>
+    <ion-item class="">
+      <ion-label position='stacked'>Telephone Number</ion-label>
+      <ion-input [(ngModel)]='user.telephone' [ngModelOptions]="{standalone: true}" type='tel' clearInput></ion-input>
+    </ion-item>
+
+    <div class="button-container">
+      <ion-button type='submit' expand='block'>Create Account</ion-button>
+    </div>
   </form>
 
 </ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar class="ion-padding">
+    <div class="sign-in center"> Already have an account? <a routerLink='/welcome'> Sign in </a></div>
+  </ion-toolbar>
+</ion-footer>

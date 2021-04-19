@@ -19,11 +19,36 @@
 }
 
 .header {
-    font-weight: bolder;
-    font-size: 25px;
+    font-weight: bold;
+    font-size: 28px;
     margin-top: 5%;
 }
 
+a {
+    margin-left: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
 ion-button {
-    margin-top: 10%;
+    font-size: 16px;
+    height: 45px;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.sign-up-text {
+    margin-bottom: 10%;
+    font-weight: normal;
+}
+
+.sign-in{
+  font-size: small;
+}
+
+.sign-in {
+    text-decoration: none;
+    font-weight: bold;
 }

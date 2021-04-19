@@ -5,5 +5,5 @@ export interface User {
   email:string;
   password:string;
   emailVerified: boolean;
-  location: string;
+  telephone: string;
 }
