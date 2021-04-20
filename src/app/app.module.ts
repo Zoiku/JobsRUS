@@ -6,6 +6,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CategoriesPageModule } from './pages/categories/categories.module';
 
 // Firebase set up
 import { environment } from '../environments/environment';
@@ -14,8 +15,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 // HTTP
 // import { HTTP } from '@ionic-native/http/ngx';
-
-import { HttpClientJsonpModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,8 +24,9 @@ import { HttpClientJsonpModule } from '@angular/common/http';
   imports: [BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    CategoriesPageModule,
     AngularFireAuthModule,
-    HttpClientJsonpModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase)],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],

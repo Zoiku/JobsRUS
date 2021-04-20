@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +8,11 @@ import { AuthService } from '../../services/auth.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private authService:AuthService) { }
+  listings:Array<Object> = [];
 
-  ngOnInit() {}
+  constructor(private http:HttpClient) { }
+
+  async ngOnInit() {
+    Object.assign(this.listings, await this.http.get('http://localhost:3000/api/listings').toPromise())
+  }
 }

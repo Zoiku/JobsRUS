@@ -1,10 +1,5 @@
 <ion-content>
-
   <div class="welcome-area">
-    <ion-button fill='clear' color='light'>
-      <ion-menu-button menu='main-menu'></ion-menu-button>
-    </ion-button>
-
     <header class="ion-padding">
       Hello
       <br><span>{{ user }}</span>
@@ -13,10 +8,10 @@
 
   <ion-row class="cards-container">
     <ion-col>
-      <app-dash-cards [title]="'Watch List'" [figure]="'3'"></app-dash-cards>
+      <app-dash-cards [title]="'Your Watch List'" [figure]="watchlist.length"></app-dash-cards>
     </ion-col>
     <ion-col>
-      <app-dash-cards [title]="'Listed Jobs'" [figure]="'0'"></app-dash-cards>
+      <app-dash-cards [title]="'Your Listed Jobs'" [figure]="listings.length"></app-dash-cards>
     </ion-col>
   </ion-row>
 
