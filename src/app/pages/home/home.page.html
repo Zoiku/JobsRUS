@@ -8,10 +8,10 @@
 
   <ion-row class="cards-container">
     <ion-col>
-      <app-dash-cards [title]="'Watch List'" [figure]="watchlist.length"></app-dash-cards>
+      <app-dash-cards [title]="'Watch List'" [figure]="watchService.allWatchList.length"></app-dash-cards>
     </ion-col>
     <ion-col>
-      <app-dash-cards [title]="'Listed Jobs'" [figure]="listings.length"></app-dash-cards>
+      <app-dash-cards [title]="'Listed Jobs'" [figure]="listingService.allListings.length"></app-dash-cards>
     </ion-col>
   </ion-row>
 

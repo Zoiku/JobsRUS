@@ -12,7 +12,5 @@ export class DashboardComponent implements OnInit {
 
   constructor(private listingService:ListingsService) { }
 
-  async ngOnInit() {
-    Object.assign(this.listings, await this.listingService.getAllListings())
-  }
+  ngOnInit() {}
 }

@@ -5,11 +5,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class WatchlistService {
+  allWatchList: Array<Object> = [];
 
-  constructor(private http:HttpClient) { }
-
-  getMyWatchList() {
-     return this.http.get('http://localhost:3000/api/watch').toPromise();
+  constructor(private http:HttpClient) {
+    http.get('http://localhost:3000/api/watch').toPromise()
+      .then(data => Object.assign(this.allWatchList, data))
   }
 
 }

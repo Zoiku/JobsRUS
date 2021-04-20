@@ -4,13 +4,13 @@
     <ion-icon name="analytics-outline"></ion-icon>
   </div>
 
-  <div class="empty-box-container" *ngIf = 'listings.length == 0' >
+  <div class="empty-box-container" *ngIf = 'listingService.allListings.length == 0' >
       <img src="../../../assets/icon/empty-box.svg" alt="">
       <p>Unavailable Job</p>
   </div>
 
-  <ion-list class="div" *ngIf = 'listings.length > 0'>
-    <ion-item class="ion-margin-top" *ngFor = 'let listing of listings'>
+  <ion-list class="div" *ngIf = 'listingService.allListings.length > 0'>
+    <ion-item class="ion-margin-top" *ngFor = 'let listing of listingService.allListings'>
       <p class="title">{{listing.title}}</p>
       <ion-text slot="end">GHc{{listing.salary}}</ion-text>
     </ion-item>

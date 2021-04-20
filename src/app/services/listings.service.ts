@@ -6,15 +6,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ListingsService {
+  allListings:Array<Object> = [];
 
-  constructor(private http:HttpClient) { }
-
-  getAllListings() {
-    return this.http.get('http://localhost:3000/api/listings').toPromise()
-  }
-
-  myListings(email:string) {
-    return this.http.get('http://localhost:3000/api/listings/email').toPromise()
+  constructor(private http:HttpClient) {
+    http.get('http://localhost:3000/api/listings').toPromise()
+      .then(data => Object.assign(this.allListings, data))
   }
 
 }
