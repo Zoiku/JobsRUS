@@ -1,6 +1,7 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Router } from '@angular/router';
+
+import { HttpClient } from '@angular/common/http'
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomePage implements OnInit {
 
   user:string = '';
 
-  constructor(private auth: AngularFireAuth, private route:Router, private zone:NgZone) {}
+  constructor(private auth: AngularFireAuth, private http:HttpClient) {}
 
   ngOnInit() {
     let currentuser = this.auth.onAuthStateChanged;
@@ -23,10 +24,15 @@ export class HomePage implements OnInit {
           this.user = user.displayName;
         }
       } else {
-        this.zone.run(() => {
-          this.route.navigate(['/welcome']);
-        })
+        location.href = '/welcome';
       }
     })
+
+    async function foo() {
+      let data:Array<Object> = await this.http.get('http://localhost:3000/api/users');
+      console.log(data);
+    }
+
+    foo();
   }
 }

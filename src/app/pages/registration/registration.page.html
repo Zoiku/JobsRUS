@@ -36,11 +36,6 @@
     </ion-item>
 
     <ion-item class="">
-      <ion-label position='stacked'>Confirm Password</ion-label>
-      <ion-input [(ngModel)]='password_confirmation' [ngModelOptions]="{standalone: true}" type='password' clearInput></ion-input>
-    </ion-item>
-
-    <ion-item class="">
       <ion-label position='stacked'>Telephone Number</ion-label>
       <ion-input [(ngModel)]='user.telephone' [ngModelOptions]="{standalone: true}" type='tel' clearInput></ion-input>
     </ion-item>
@@ -48,12 +43,16 @@
     <div class="button-container">
       <ion-button type='submit' expand='block'>Create Account</ion-button>
     </div>
+
+    <div class="valids ion-margin-top">
+      <ul>
+        <li>Enter valid email</li>
+        <li>Password must container one lower case, upper case and special character</li>
+        <li>Telephone number must be between 13 and 15 characters</li>
+      </ul>
+    </div>
   </form>
 
+  <div class="sign-in center"> Already have an account? <a routerLink='/welcome'> Sign in </a></div>
 </ion-content>
 
-<ion-footer class="ion-no-border">
-  <ion-toolbar class="ion-padding">
-    <div class="sign-in center"> Already have an account? <a routerLink='/welcome'> Sign in </a></div>
-  </ion-toolbar>
-</ion-footer>

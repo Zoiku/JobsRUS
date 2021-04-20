@@ -21,7 +21,6 @@
 .header {
     font-weight: bold;
     font-size: 28px;
-    margin-top: 5%;
 }
 
 a {
@@ -44,11 +43,20 @@ ion-button {
     font-weight: normal;
 }
 
-.sign-in{
-  font-size: small;
-}
-
 .sign-in {
     text-decoration: none;
-    font-weight: bold;
+    font-size: small;
 }
+
+.sign-in a {
+    font-weight: bold;
+}   
+
+.valids {
+    font-size: 13px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid rgba(153, 153, 153, 0.372);
+    list-style: square;
+}
+

@@ -13,7 +13,10 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 // HTTP
-import { HTTP } from '@ionic-native/http/ngx';
+// import { HTTP } from '@ionic-native/http/ngx';
+
+import { HttpClientJsonpModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,8 +25,9 @@ import { HTTP } from '@ionic-native/http/ngx';
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireAuthModule,
+    HttpClientJsonpModule,
     AngularFireModule.initializeApp(environment.firebase)],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, HTTP],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
