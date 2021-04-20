@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { HttpClient } from '@angular/common/http';
+import { ListingsService } from 'src/app/services/listings.service';
+import { WatchlistService } from '../../services/watchlist.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -11,7 +13,7 @@ export class HomePage implements OnInit {
   watchlist:Array<Object> = [];
   listings:Array<Object> = [];
 
-  constructor(private auth: AngularFireAuth, private http:HttpClient) {}
+  constructor(private auth: AngularFireAuth, private watchService:WatchlistService, private listingService: ListingsService) {}
 
   async ngOnInit() {
     this.auth.onAuthStateChanged( user => {
@@ -26,7 +28,10 @@ export class HomePage implements OnInit {
       }
     })
 
-    Object.assign(this.listings, await this.http.get('http://localhost:3000/api/listings').toPromise())
-    Object.assign(this.watchlist, await this.http.get('http://localhost:3000/api/watch').toPromise())
+    // Retrieving all listings and assigning it to listings object
+    Object.assign(this.listings, await this.listingService.getAllListings())
+
+    // Retrieving all watchList and assigning it to watchList object
+    Object.assign(this.watchlist, await this.watchService.getMyWatchList())
   }
 }
