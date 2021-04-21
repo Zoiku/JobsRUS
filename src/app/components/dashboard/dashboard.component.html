@@ -12,7 +12,7 @@
   <ion-list class="div" *ngIf = 'listingService.allListings.length > 0'>
     <ion-item class="ion-margin-top" *ngFor = 'let listing of listingService.allListings'>
       <p class="title">{{listing.title}}</p>
-      <ion-text slot="end">GHc{{listing.salary}}</ion-text>
+      <ion-text slot="end">GHS {{listing.salary}}</ion-text>
     </ion-item>
   </ion-list>
 </ion-card>
