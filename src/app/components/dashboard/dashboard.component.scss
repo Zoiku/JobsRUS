@@ -12,6 +12,13 @@ ion-card {
   font-size: 20px;
 }
 
+.title {
+  white-space: nowrap;
+  max-width: 13ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 img {
   opacity: 0.5;
   width: 50%;

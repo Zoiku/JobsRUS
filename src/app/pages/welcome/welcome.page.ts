@@ -10,13 +10,11 @@ import { AngularFireAuth } from '@angular/fire/auth';
   styleUrls: ['./welcome.page.scss'],
 })
 export class WelcomePage implements OnInit {
+  password:string='';
   user:User = {
     firstname: '',
     lastname: '',
-    name: '',
     email: '',
-    password: '',
-    emailVerified: false,
     telephone: ''
   };
   err_msg = '';
@@ -35,7 +33,7 @@ export class WelcomePage implements OnInit {
 
   emailSignIn() {
     var error = document.getElementById('error');
-    this.authService.emailSignIn(this.user.email, this.user.password)
+    this.authService.emailSignIn(this.user.email, this.password)
       .then()
       .catch(err => {
         this.err_msg = err;

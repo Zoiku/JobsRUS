@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='categories'></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="header">
+    <div class="text-header">{{category}}</div>
+    <div class="bottom-header">
+      <div class="message">Job Listings</div>
+      <div class="number">{{listing.length}}</div>
+    </div>
+  </div>
+
+  <ion-list *ngIf = 'listing.length > 0'>
+    <ion-item *ngFor='let job of listing;let i = index'>
+      <p slot="start">{{i+1}}</p>
+      <p class="title">{{job.title}}</p>
+      <div slot="end">GHS {{job.salary}}</div>
+      <ion-text color="primary" slot="end" [routerLink]= "['/job-detail', job.id]">more</ion-text>
+    </ion-item>
+  </ion-list>
+
+  <div class="unavailable ion-margin-top" *ngIf = 'listing.length == 0'>
+    <img src="../../../assets/icon/empty-box.svg" alt="">
+    <p>Unavailable Job Listing</p>
+  </div>
+</ion-content>

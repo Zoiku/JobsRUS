@@ -8,13 +8,11 @@ import { User } from '../../interfaces/user';
   styleUrls: ['./registration.page.scss'],
 })
 export class RegistrationPage implements OnInit {
+  password:string = '';
   user: User = {
     firstname: '',
     lastname: '',
-    name: '',
     email: '',
-    password: '',
-    emailVerified: false,
     telephone: ''
   }
   password_confirmation:string = '';

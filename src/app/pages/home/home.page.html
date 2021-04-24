@@ -2,19 +2,18 @@
   <div class="welcome-area">
     <header class="ion-padding">
       Hello
-      <br><span>{{ user }}</span>
+      <br><span *ngIf="user">{{ user }}</span><span *ngIf="!user">USER</span>
     </header>
   </div>
 
   <ion-row class="cards-container">
     <ion-col>
-      <app-dash-cards [title]="'Watch List'" [figure]="watchService.allWatchList.length"></app-dash-cards>
+      <app-dash-cards [title]="'Watch List'" [figure]="'0'"></app-dash-cards>
     </ion-col>
     <ion-col>
-      <app-dash-cards [title]="'Listed Jobs'" [figure]="listingService.allListings.length"></app-dash-cards>
+      <app-dash-cards [title]="'Listed Jobs'" [figure]="'0'"></app-dash-cards>
     </ion-col>
   </ion-row>
-
   <app-dashboard></app-dashboard>
   <app-tabs></app-tabs>
 </ion-content>

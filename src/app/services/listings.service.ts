@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Listing } from '../interfaces/listing';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListingsService {
-  allListings:Array<Object> = [];
+  joblistings:Array<Listing> = [];
 
   constructor(private http:HttpClient) {
     http.get('http://localhost:3000/api/listings').toPromise()
-      .then(data => Object.assign(this.allListings, data))
+      .then(data => Object.assign(this.joblistings, data))
   }
-
 }

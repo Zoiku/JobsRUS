@@ -26,16 +26,19 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
-  },  {
-    path: 'listings',
+  },
+  {
+    path: 'listings/:category',
     loadChildren: () => import('./pages/listings/listings.module').then( m => m.ListingsPageModule)
   },
   {
     path: 'categories',
     loadChildren: () => import('./pages/categories/categories.module').then( m => m.CategoriesPageModule)
   },
-
-
+  {
+    path: 'job-detail/:id',
+    loadChildren: () => import('./pages/job-detail/job-detail.module').then( m => m.JobDetailPageModule)
+  },
 ];
 
 @NgModule({

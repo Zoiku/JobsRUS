@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-categories',
@@ -8,12 +7,11 @@ import { ModalController } from '@ionic/angular';
 })
 export class CategoriesPage implements OnInit {
 
-  constructor(private modalCtrl:ModalController) { }
+  constructor() { }
 
-  async close() {
-    await this.modalCtrl.dismiss()
+  ngOnInit() {
+
   }
 
-  ngOnInit() {}
 
 }

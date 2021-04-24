@@ -1,25 +1,22 @@
-<ion-header color="primary">
-  <ion-toolbar>
-    <ion-title>Select Category</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="close()">
-        <ion-icon slot="icon-only" name="close"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+<ion-header>
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref='home'></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding ion-no-margin ion-margin-top">
     <ion-row>
       <ion-col>
-        <ion-card class="ion-padding ion-no-margin">
+        <ion-card [routerLink]= "['/listings', 'Agriculture']" class="ion-padding ion-no-margin">
             <p>Agriculture</p>
         </ion-card>
       </ion-col>
 
       <ion-col>
-        <ion-card class="ion-padding ion-no-margin">
+        <ion-card [routerLink]= "['/listings', 'Human Services']" class="ion-padding ion-no-margin">
           <p>Human Services</p>
         </ion-card>
       </ion-col>
@@ -27,13 +24,13 @@
 
     <ion-row class="ion-margin-top">
       <ion-col>
-        <ion-card class="ion-padding ion-no-margin">
+        <ion-card [routerLink]= "['/listings', 'Business']" class="ion-padding ion-no-margin">
             <p>Business</p>
         </ion-card>
       </ion-col>
 
       <ion-col>
-        <ion-card class="ion-padding ion-no-margin">
+        <ion-card [routerLink]= "['/listings', 'Information Technology']" class="ion-padding ion-no-margin">
           <p>Information Technology</p>
         </ion-card>
       </ion-col>
@@ -41,27 +38,27 @@
 
     <ion-row class="ion-margin-top">
       <ion-col>
-        <ion-card class="ion-padding ion-no-margin">
-          <p>Education & Training</p>
+        <ion-card [routerLink]= "['/listings', 'Education and Training']" class="ion-padding ion-no-margin">
+          <p>Education and Training</p>
         </ion-card>
       </ion-col>
 
       <ion-col>
-        <ion-card class="ion-padding ion-no-margin">
-            <p>Architecture & Construction</p>
+        <ion-card [routerLink]= "['/listings', 'Architecture and Construction']" class="ion-padding ion-no-margin">
+            <p>Architecture and Construction</p>
         </ion-card>
       </ion-col>
     </ion-row>
 
     <ion-row class="ion-margin-top">
       <ion-col>
-        <ion-card class="ion-padding ion-no-margin">
+        <ion-card [routerLink]= "['/listings', 'Arts and Entertainment']" class="ion-padding ion-no-margin">
             <p>Arts and Entertainment</p>
         </ion-card>
       </ion-col>
 
       <ion-col>
-        <ion-card class="ion-padding ion-no-margin">
+        <ion-card [routerLink]= "['/listings', 'Other']" class="ion-padding ion-no-margin">
             <p>Other</p>
         </ion-card>
       </ion-col>

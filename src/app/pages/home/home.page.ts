@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { ListingsService } from 'src/app/services/listings.service';
-import { WatchlistService } from '../../services/watchlist.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +9,7 @@ import { WatchlistService } from '../../services/watchlist.service';
 export class HomePage implements OnInit {
   user:string = '';
 
-  constructor(private auth: AngularFireAuth, private watchService:WatchlistService, private listingService: ListingsService) {}
+  constructor(private auth: AngularFireAuth) {}
 
   ngOnInit() {
     this.auth.onAuthStateChanged( user => {

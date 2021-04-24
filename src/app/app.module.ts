@@ -6,7 +6,6 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { CategoriesPageModule } from './pages/categories/categories.module';
 
 // Firebase set up
 import { environment } from '../environments/environment';
@@ -17,14 +16,12 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 // import { HTTP } from '@ionic-native/http/ngx';
 import { HttpClientModule } from '@angular/common/http';
 
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    CategoriesPageModule,
     AngularFireAuthModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase)],

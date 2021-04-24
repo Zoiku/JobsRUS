@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-import { ModalController } from '@ionic/angular';
-import { CategoriesPage } from '../../pages/categories/categories.page';
 
 @Component({
   selector: 'app-tabs',
@@ -10,16 +8,8 @@ import { CategoriesPage } from '../../pages/categories/categories.page';
 })
 export class TabsComponent implements OnInit {
 
-  constructor(private authService: AuthService, private modalCtrl:ModalController) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {}
-
-  async showModal() {
-    const modal = await this.modalCtrl.create({
-      component: CategoriesPage
-    })
-
-    await modal.present();
-  }
 
 }
