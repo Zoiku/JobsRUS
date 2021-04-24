@@ -16,7 +16,7 @@
   </div>
 
   <ion-list *ngIf = 'listing.length > 0'>
-    <ion-item *ngFor='let job of listing;let i = index'>
+    <ion-item class="ion-margin-top" *ngFor='let job of listing;let i = index'>
       <p slot="start">{{i+1}}</p>
       <p class="title">{{job.title}}</p>
       <div slot="end">GHS {{job.salary}}</div>

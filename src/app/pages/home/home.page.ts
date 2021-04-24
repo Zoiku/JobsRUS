@@ -23,5 +23,6 @@ export class HomePage implements OnInit {
         location.href = '/welcome';
       }
     })
+
   }
 }
