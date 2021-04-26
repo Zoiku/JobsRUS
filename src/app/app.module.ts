@@ -16,6 +16,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 // import { HTTP } from '@ionic-native/http/ngx';
 import { HttpClientModule } from '@angular/common/http';
 
+// Modal Component
+import { PostJobModule } from './components/post-job/post-job.module';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -24,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     AngularFireAuthModule,
     HttpClientModule,
+    PostJobModule,
     AngularFireModule.initializeApp(environment.firebase)],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],

@@ -1,0 +1,48 @@
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.header {
+  text-align: center;
+}
+
+img {
+  width: 70%;
+}
+
+.job-to-list {
+  font-weight: bold;
+  padding: 5px;
+  font: 15px;
+}
+
+.details {
+  font-weight: bolder;
+}
+
+.details-header {
+  text-align: center;
+  font-size: 16px;
+}
+
+.short {
+  max-width: 18ch;
+}
+
+.contact-header {
+  font-size: larger;
+  font-weight: bolder;
+  font-size: 20px;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.372);
+  text-align: center;
+}
+
+.contact {
+  margin-top: 5vh;
+}
+
+ion-button {
+  font-size: 16px;
+  height: 45px;
+}
+

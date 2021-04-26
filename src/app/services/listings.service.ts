@@ -11,4 +11,8 @@ export class ListingsService {
     http.get('http://localhost:3000/api/listings').toPromise()
       .then(data => Object.assign(this.joblistings, data))
   }
+
+  addListing(listing:Listing) {
+    this.http.post('htt[://localhost:3000/api/listings/add', {listing})
+  }
 }

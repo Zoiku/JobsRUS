@@ -6,11 +6,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <div class="header-header">
     <div class="category ion-padding-top">{{job.category}}</div>
     <div class="header ion-margin">
-      <img src="../../../assets//profile/profile-image-icon-9.jpg" alt="">
+      <img src="../../../assets//profile/profile.png" alt="">
       <div class="header-text ion-margin-top ion-margin-bottom">{{job.email}}</div>
     </div>
   </div>
@@ -18,38 +18,35 @@
   <div class="details ion-margin-top">
     <ion-item class="ion-margin-top">
       <p>Job title</p>
-      <p slot="end">{{ job.title }}</p>
+      <p readonly slot="end">{{ job.title }}</p>
     </ion-item>
 
     <ion-item class="ion-margin-top">
       <p>Salary</p>
-      <p slot="end">GHS {{ job.salary }}</p>
+      <p readonly slot="end">GHS {{ job.salary }}</p>
     </ion-item>
 
-    <div class="job-ds ion-margin ion-margin-top">
-      <p class="ion-no-margin">Job Description</p>
-      <ion-card class="ion-no-margin ion-padding">
-        {{job.description}}
-      </ion-card>
-    </div>
+    <ion-item class="ion-margin-top">
+      <ion-label position='stacked'>Job Description</ion-label>
+      <ion-textarea readonly autoGrow='true' [value]="job.description"></ion-textarea>
+    </ion-item>
   </div>
 
-
-  <div class="contact ion-padding">
+  <ion-card class="contact ion-padding ion-margin-top">
     <div class="contact-header ion-margin ion-margin-top">CONTACT</div>
-    <ion-item>
+    <ion-item class="ion-padding">
       <p>+233 000 000 0000</p>
       <ion-icon slot="end" name="call-outline"></ion-icon>
     </ion-item>
 
-    <ion-item>
-      <p>{{job.email}}</p>
+    <ion-item class="ion-padding">
+      <p readonly>{{job.email}}</p>
       <ion-icon slot="end" name="mail-outline"></ion-icon>
     </ion-item>
 
-    <ion-item>
-      <p>{{job.location}}</p>
+    <ion-item class="ion-padding">
+      <p readonly>{{job.location}}</p>
       <ion-icon slot="end" name="location-outline"></ion-icon>
     </ion-item>
-  </div>
+  </ion-card>
 </ion-content>

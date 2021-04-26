@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { PostJobComponent } from '../../components/post-job/post-job.component';
 
 @Component({
   selector: 'app-categories',
@@ -7,11 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesPage implements OnInit {
 
-  constructor() { }
+  constructor(private modalController:ModalController) { }
 
-  ngOnInit() {
+  ngOnInit() {}
 
+  async showModal() {
+    const modal = await this.modalController.create({
+      component: PostJobComponent
+    })
+
+    await modal.present();
   }
-
 
 }

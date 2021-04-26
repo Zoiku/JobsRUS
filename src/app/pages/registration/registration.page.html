@@ -14,7 +14,7 @@
     Sign up to get started !
   </div>
 
-  <form (ngSubmit)="this.auth.signUp(user.email, user.password)">
+  <form (ngSubmit)="submit()">
     <ion-item class="">
       <ion-label position='stacked'>First Name</ion-label>
       <ion-input [(ngModel)]='user.firstname' [ngModelOptions]="{standalone: true}" type='text' clearInput></ion-input>
@@ -37,18 +37,18 @@
 
     <ion-item class="">
       <ion-label position='stacked'>Telephone Number</ion-label>
-      <ion-input [(ngModel)]='user.telephone' [ngModelOptions]="{standalone: true}" type='tel' clearInput></ion-input>
+      <ion-input [(ngModel)]='user.telephone' [ngModelOptions]="{standalone: true}" type='number' clearInput></ion-input>
     </ion-item>
 
     <div class="button-container">
       <ion-button type='submit' expand='block'>Create Account</ion-button>
     </div>
 
-    <div class="valids ion-margin-top">
+    <div class="valids ion-margin-top" [ngStyle]="!success && {'border': '2px solid red'}">
       <ul>
-        <li>Enter valid email</li>
-        <li>Password must container one lower case, upper case and special character</li>
-        <li>Telephone number must be between 13 and 15 characters</li>
+        <li [ngStyle]="!emailVal && {'color': 'red', 'font-weight': 'bold'}">Enter valid email</li>
+        <li [ngStyle]="!passwordVal && {'color': 'red', 'font-weight': 'bold'}">Password must container one lower case, upper case, a number, and between 6 and 20 characters</li>
+        <li [ngStyle]="!telephoneVal && {'color': 'red', 'font-weight': 'bold'}">Telephone number must be between 13 and 15 characters</li>
       </ul>
     </div>
   </form>

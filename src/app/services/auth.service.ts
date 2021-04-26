@@ -9,6 +9,10 @@ export class AuthService {
 
   constructor(private auth: AngularFireAuth) {}
 
+  async getcurrentEmail():Promise<firebase.User> {
+    return this.auth.currentUser
+  }
+
   signUp(email:string, password:string):Promise<firebase.auth.UserCredential> {
     return this.auth.createUserWithEmailAndPassword(email, password);
   }

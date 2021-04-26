@@ -21,7 +21,7 @@ export class WelcomePage implements OnInit {
 
   constructor(private authService:AuthService, private auth:AngularFireAuth, private router:Router, private zone:NgZone) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.auth.onAuthStateChanged(user => {
       if(user) {
         this.zone.run(() => {
