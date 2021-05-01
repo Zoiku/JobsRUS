@@ -6,6 +6,8 @@
   </ion-toolbar>
 </ion-header>
 
+<div id='error' *ngIf="err_msg != ''" class="error">{{err_msg}}</div>
+
 <ion-content class="ion-padding">
 
   <div class="header">Create Account</div>
@@ -15,7 +17,7 @@
   </div>
 
   <form (ngSubmit)="submit()">
-    <ion-item class="">
+    <ion-item>
       <ion-label position='stacked'>First Name</ion-label>
       <ion-input [(ngModel)]='user.firstname' [ngModelOptions]="{standalone: true}" type='text' clearInput></ion-input>
     </ion-item>

@@ -1,7 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ListingsService } from '../../services/listings.service';
-import { Listing } from '../../interfaces/listing';
 
 @Component({
   selector: 'app-listings',
@@ -10,12 +10,12 @@ import { Listing } from '../../interfaces/listing';
 })
 export class ListingsPage implements OnInit {
   category:string = '';
-  listing:Listing[];
+  listing:any;
 
-  constructor(private activatedRoute: ActivatedRoute, private listingService: ListingsService) { }
+  constructor(private activatedRoute: ActivatedRoute, private listingService:ListingsService, private http: HttpClient) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.category = this.activatedRoute.snapshot.paramMap.get('category');
-    this.listing = this.listingService.joblistings.filter(job => job.category === this.category);
+    this.listing = await this.listingService.getJobCategories(this.category)
   }
 }

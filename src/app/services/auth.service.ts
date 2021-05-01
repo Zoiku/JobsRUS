@@ -26,11 +26,6 @@ export class AuthService {
     return this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider);
   }
 
-  async twitterSignIn():Promise<firebase.auth.UserCredential> {
-    await this.auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-    return this.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider);
-  }
-
   async facebookSignIn():Promise<firebase.auth.UserCredential> {
     await this.auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
     return this.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider);

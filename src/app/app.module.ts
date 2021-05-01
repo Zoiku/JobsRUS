@@ -13,11 +13,21 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 // HTTP
-// import { HTTP } from '@ionic-native/http/ngx';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http'
 
-// Modal Component
-import { PostJobModule } from './components/post-job/post-job.module';
+// Modal Components
+import { PostJobPageModule } from './pages/post-job/post-job.module';
+import { ProfilePageModule } from './pages/profile/profile.module';
+
+// SMS Provider
+import { SMS } from '@ionic-native/sms/ngx';
+
+
+// Services
+import { AuthService } from './services/auth.service';
+import { ListingsService } from './services/listings.service';
+import { UsersService } from './services/users.service';
+import { SmsService } from './services/sms.service'
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,9 +37,10 @@ import { PostJobModule } from './components/post-job/post-job.module';
     AppRoutingModule,
     AngularFireAuthModule,
     HttpClientModule,
-    PostJobModule,
+    ProfilePageModule,
+    PostJobPageModule,
     AngularFireModule.initializeApp(environment.firebase)],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, SMS, AuthService, ListingsService, UsersService, SmsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

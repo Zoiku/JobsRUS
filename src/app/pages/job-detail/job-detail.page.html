@@ -10,7 +10,7 @@
   <div class="header-header">
     <div class="category ion-padding-top">{{job.category}}</div>
     <div class="header ion-margin">
-      <img src="../../../assets//profile/profile.png" alt="">
+      <img src="../../../assets//profile/profile-1.png" alt="">
       <div class="header-text ion-margin-top ion-margin-bottom">{{job.email}}</div>
     </div>
   </div>
@@ -34,19 +34,27 @@
 
   <ion-card class="contact ion-padding ion-margin-top">
     <div class="contact-header ion-margin ion-margin-top">CONTACT</div>
-    <ion-item class="ion-padding">
-      <p>+233 000 000 0000</p>
+    <div style="text-align: center;">
+      <small>Press telephone icon to send message</small>
+    </div>
+    <ion-item (click)="sms()" class="ion-padding">
+      <ion-text readonly>{{job.telephone}}</ion-text>
       <ion-icon slot="end" name="call-outline"></ion-icon>
     </ion-item>
 
+
     <ion-item class="ion-padding">
-      <p readonly>{{job.email}}</p>
+      <ion-text readonly>{{job.email}}</ion-text>
       <ion-icon slot="end" name="mail-outline"></ion-icon>
     </ion-item>
 
     <ion-item class="ion-padding">
-      <p readonly>{{job.location}}</p>
+      <ion-text readonly>{{job.location}}</ion-text>
       <ion-icon slot="end" name="location-outline"></ion-icon>
     </ion-item>
   </ion-card>
+
+  <ion-button class="ion-margin-top remove" color="danger" expand="block" (click)="del()" *ngIf='delete'>Remove Job Listing</ion-button>
 </ion-content>
+
+

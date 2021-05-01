@@ -38,7 +38,15 @@ const routes: Routes = [
   {
     path: 'job-detail/:id',
     loadChildren: () => import('./pages/job-detail/job-detail.module').then( m => m.JobDetailPageModule)
+  },  {
+    path: 'my-jobs',
+    loadChildren: () => import('./pages/my-jobs/my-jobs.module').then( m => m.MyJobsPageModule)
   },
+  {
+    path: 'post-job',
+    loadChildren: () => import('./pages/post-job/post-job.module').then( m => m.PostJobPageModule)
+  },
+
 ];
 
 @NgModule({

@@ -59,3 +59,11 @@ ion-button {
     border: 1px solid rgba(153, 153, 153, 0.372);
     list-style: square;
 }
+
+#error {
+  text-align: center;
+  font-weight: bolder;
+  padding: 5%;
+  color: #fff;
+  background-color: #CF0012;
+}

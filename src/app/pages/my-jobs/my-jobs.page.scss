@@ -3,47 +3,35 @@
 }
 
 .header {
-  background-color: #2c74d2;
+  height: 30%;
+  background-color: #2C73D2;
   color: #fff;
-  height: 30vh;
-  position: relative;
   font-size: larger;
-}
-
-.text-header{
-  height: 20vh;
   display: grid;
   place-items: center;
+  position: relative;
 }
 
-.bottom-header {
+.message {
   position: absolute;
-  bottom: 0;
   width: 100%;
+  bottom: 0;
   display: flex;
+  padding: 0px 20px;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
 }
 
-.number {
+strong {
   font-weight: bolder;
   font-size: 50px;
 }
 
 .unavailable {
   text-align: center;
-  font-size: larger;
 }
 
-.unavailable img {
+img {
   width: 50%;
   opacity: 0.5;
-}
-
-.title {
-  white-space: nowrap;
-  max-width: 13ch;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }

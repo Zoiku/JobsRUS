@@ -1,15 +1,24 @@
-<ion-header>
+<div class="color">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref='home'></ion-back-button>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
-</ion-header>
+</div>
 
 <ion-content>
-  <div class="header ion-margin">
-    <img src="../../../assets//profile/profile.png" alt="">
-    <h3>User Profile</h3>
+  <div style="text-align: center;"><strong>My Profile</strong></div>
+
+  <div class="header">
+    <div class="image-container">
+      <img src="../../../assets/profile/profile-1.png" alt="">
+    </div>
+
+    <div class="message">
+      {{currentuser?.email}}
+    </div>
   </div>
 
   <div class="details ion-padding ion-margin-top">

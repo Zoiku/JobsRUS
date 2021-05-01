@@ -1,21 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { ListingsService } from 'src/app/services/listings.service';
+import { ListingsService } from '../../services/listings.service';
 import { ModalController } from '@ionic/angular';
 import { ProfilePage } from '../../pages/profile/profile.page';
 
+
+
 @Component({
-  selector: 'app-tabs',
-  templateUrl: './tabs.component.html',
-  styleUrls: ['./tabs.component.scss'],
+  selector: 'app-my-jobs',
+  templateUrl: './my-jobs.page.html',
+  styleUrls: ['./my-jobs.page.scss'],
 })
-export class TabsComponent implements OnInit {
+export class MyJobsPage implements OnInit {
   hide:boolean = false;
 
-  constructor(private modalController:ModalController, private listingService:ListingsService, private authService: AuthService, private auth:AngularFireAuth) { }
+  constructor(private auth:AngularFireAuth, private modalController:ModalController, private listingService:ListingsService, private authService: AngularFireAuth) { }
 
   ngOnInit() {
+    this.listingService.refreshNeeded$.subscribe(() => this.listingService.updateListings());
+
     this.auth.onAuthStateChanged(user => {
       if(user) {
         this.auth.currentUser.then(user => {
@@ -25,6 +28,10 @@ export class TabsComponent implements OnInit {
         })
       }
     })
+  }
+
+  async close() {
+    await this.modalController.dismiss();
   }
 
   async showModal() {

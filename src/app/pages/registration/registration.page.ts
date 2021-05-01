@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./registration.page.scss'],
 })
 export class RegistrationPage implements OnInit {
+  err_msg = '';
   password:string = '';
   user: User = {
     firstname: '',
@@ -31,7 +32,6 @@ export class RegistrationPage implements OnInit {
   constructor(private auth: AuthService, private userService:UsersService, private route:Router) { }
 
   ngOnInit() {}
-
   async submit() {
     try {
       if(this.password != '', this.user.email != '', this.user.firstname != '', this.user.lastname != '', this.user.telephone != '' ) {
@@ -49,7 +49,6 @@ export class RegistrationPage implements OnInit {
           this.emailVal = false;
         }
 
-
         if(this.emailVal === true, this.passwordVal === true, this.emailVal === true) {
           this.success = true;
         } else {
@@ -57,11 +56,11 @@ export class RegistrationPage implements OnInit {
         }
 
         if(this.success === true) {
-          let fireAuth =  await this.auth.signUp(this.user.email, this.password);
-          if(fireAuth) {
-            this.userService.register(this.user);
-            this.route.navigate['/welcome'];
-          }
+          this.auth.signUp(this.user.email, this.password)
+            .then(() => {
+              this.userService.register(this.user);
+              this.route.navigate['/welcome'];
+            })
         }
 
       }else {
@@ -71,8 +70,9 @@ export class RegistrationPage implements OnInit {
         this.telephoneVal = false;
       }
     } catch (error) {
-      alert(error);
+      this.err_msg = error;
     }
   }
+
 
 }

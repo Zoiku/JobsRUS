@@ -13,7 +13,10 @@
     letter-spacing: 2px;
     position: absolute;
     bottom: 0;
-    text-transform: uppercase;
+}
+
+span {
+  text-transform: lowercase;
 }
 
 .welcome-area header span {
@@ -24,4 +27,71 @@
 .cards-container {
   margin: 10px;
   height: 20%;
+}
+
+// Card
+
+ion-card {
+  min-height: 50%;
+}
+
+.empty-box-container {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.title {
+  white-space: nowrap;
+  max-width: 13ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+img {
+  opacity: 0.5;
+  width: 50%;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  text-decoration: dashed;
+  font-weight: bold;
+}
+
+.div {
+  padding: 0;
+  margin: 0;
+}
+
+ion-text {
+  font-weight: bold;
+}
+
+.no-margin-no-padding {
+  margin: 0;
+  padding: 0;
+}
+
+.dash-cards {
+  height: 100%;
+  background-color: #2c74d2;
+  position: relative;
+  color: #fff;
+}
+
+.dash-cards p {
+  font-size: larger;
+}
+
+strong{
+  color: #fff;
+  font-weight: bolder;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: larger;
 }

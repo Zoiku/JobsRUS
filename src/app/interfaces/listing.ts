@@ -5,5 +5,6 @@ export interface Listing {
   title:string,
   description:string,
   salary:string,
-  location:string
+  location:string,
+  telephone:string
 }

@@ -1,19 +1,38 @@
 <ion-content>
   <div class="welcome-area">
     <header class="ion-padding">
-      Hello
+      HEY THERE
       <br><span *ngIf="user">{{ user }}</span><span *ngIf="!user">USER</span>
     </header>
   </div>
 
   <ion-row class="cards-container">
     <ion-col>
-      <app-dash-cards [title]="'Watch List'" [figure]="'0'"></app-dash-cards>
-    </ion-col>
-    <ion-col>
-      <app-dash-cards [title]="'Listed Jobs'" [figure]="'0'"></app-dash-cards>
+      <ion-card class="dash-cards ion-no-margin">
+        <p class="ion-margin">My Listed Jobs</p>
+        <strong>{{(listingService.myJobs | async)?.length}}</strong>
+      </ion-card>
     </ion-col>
   </ion-row>
-  <app-dashboard></app-dashboard>
+
+  <ion-card class="ion-margin ion-padding">
+    <div class="dashboard-header">
+      <p class="no-margin-no-padding">Latest Job Offers</p>
+      <ion-icon name="analytics-outline"></ion-icon>
+    </div>
+
+    <div class="empty-box-container" *ngIf = '(listingService.lastestJobListing | async)?.length == 0' >
+        <img src="../../../assets/icon/empty-box.svg" alt="">
+        <p class="no-margin-no-padding">Unavailable Job Listing</p>
+    </div>
+
+    <ion-list class="div" *ngIf = '(listingService.jobListing | async)?.length > 0'>
+      <ion-item class="ion-margin-top" *ngFor='let listing of (listingService.lastestJobListing | async)'>
+        <p class="title no-margin-no-padding">{{listing.title}}</p>
+        <ion-text slot="end">GHS {{listing.salary}}</ion-text>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
   <app-tabs></app-tabs>
 </ion-content>

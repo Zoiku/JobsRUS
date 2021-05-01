@@ -1,6 +1,6 @@
 <ion-header color="primary">
   <ion-toolbar>
-    <ion-title>Job Listing</ion-title>
+    <ion-title>Got A Job ?</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="close()">
         <ion-icon slot="icon-only" name="close"></ion-icon>
@@ -11,8 +11,7 @@
 
 <ion-content>
   <div class="header">
-    <div class="job-to-list ion-margin">Got A Job To List ?</div>
-    <img src="../../../assets/got-a-job/65-651474_steve-jobs-png.png" alt="">
+    <img class="ion-margin" src="../../../assets/got-a-job/65-651474_steve-jobs-png.png" alt="">
   </div>
 
   <div class="details ion-padding">
@@ -20,23 +19,23 @@
 
     <ion-item class="ion-margin-top">
       <ion-label position='stacked'>Job Title</ion-label>
-      <ion-input placeholder="Eg. Research Needed"></ion-input>
+      <ion-input [(ngModel)]="listing.title" placeholder="Eg. Baby sitter needed"></ion-input>
     </ion-item>
 
     <ion-item class="ion-margin-top">
       <ion-label position='stacked'>Salaray/month</ion-label>
-      <ion-input type='number' placeholder="GHS"></ion-input>
+      <ion-input [(ngModel)]="listing.salary" type='number' placeholder="GHS"></ion-input>
     </ion-item>
 
     <ion-item class="ion-margin-top">
       <ion-label position='stacked'>Job Category</ion-label>
-      <ion-select placeholder='Select a job category' value="03">
+      <ion-select [(ngModel)]="listing.category" placeholder='Select a job category' value="03">
         <ion-select-option value="Agriculture">Agriculture</ion-select-option>
         <ion-select-option value="Human Services">Human Services</ion-select-option>
         <ion-select-option value="Business">Business</ion-select-option>
         <ion-select-option value="Information Technology">Information Technology</ion-select-option>
-        <ion-select-option value="Education and Training">Education and Training</ion-select-option>
-        <ion-select-option value="Architecture and Construction">Architecture and Construction</ion-select-option>
+        <ion-select-option value="Education & Training">Education & Training</ion-select-option>
+        <ion-select-option value="'Architecture & Construction">Architecture and Construction</ion-select-option>
         <ion-select-option value="Arts and Entertainment">Arts and Entertainment</ion-select-option>
         <ion-select-option value="Other">Other</ion-select-option>
       </ion-select>
@@ -44,29 +43,28 @@
 
     <ion-item class="ion-margin-top">
       <ion-label position='stacked'>Job Description</ion-label>
-      <ion-textarea autoGrow='true' placeholder="Provide lengthy description about job."></ion-textarea>
+      <ion-textarea [(ngModel)]="listing.description" autoGrow='true' placeholder="Provide lengthy description about job."></ion-textarea>
     </ion-item>
 
     <ion-card class="contact ion-margin-top">
       <div class="contact-header ion-padding">CONTACT</div>
       <ion-item class="ion-padding">
-        <ion-input [value]="currentUser?.telephone"></ion-input>
+        <ion-input [(ngModel)]="currentUser.telephone"></ion-input>
         <ion-icon slot="end" name="call-outline"></ion-icon>
       </ion-item>
 
       <ion-item class="ion-padding">
-        <ion-input class="short" [value]="currentUser?.email"></ion-input>
+        <ion-input class="short" [(ngModel)]="currentUser.email"></ion-input>
         <ion-icon slot="end" name="mail-outline"></ion-icon>
       </ion-item>
 
       <ion-item class="ion-padding">
-        <ion-input placeholder='Click icon to select location'></ion-input>
+        <ion-input [(ngModel)]='listing.location' placeholder='Click icon to select location'></ion-input>
         <ion-icon slot="end" name="location-outline"></ion-icon>
       </ion-item>
     </ion-card>
 
-    <ion-button class="ion-margin-top" expand='block' (click)='addListing(listing)'>Post</ion-button>
+    <ion-button class="ion-margin-top post-job-btn" (click)="addJob()" expand='block'>Post</ion-button>
   </div>
-
 
 </ion-content>
