@@ -3,8 +3,10 @@
 }
 
 ion-card {
-  min-height: 150px;
+  min-height: 180px;
   color: #fff;
+  display: flex;
+  align-items: center;
   font-size: large;
-  background-color: #2C73D2;
+  background-color: #2c74d2;
 }

@@ -9,6 +9,7 @@ export class SmsService {
 
   constructor(private alertController:AlertController, private sms:SMS,) { }
 
+  // Asynchronous method to send sms to a given telephone number
   async sendsms(telephonenumber:string) {
     const alert = await this.alertController.create({
       header: 'Send Message',

@@ -7,10 +7,11 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class UsersService {
 
+  // Dependency injections: HTTPCLIENT AND ANGULAR FIREAUTH
   constructor(private http:HttpClient, private auth:AngularFireAuth) { }
 
+  // Method to register users
   register(user:User) {
-
     let postdata = {
       email: `${user.email}`,
       firstname: `${user.firstname}`,
