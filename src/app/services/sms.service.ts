@@ -26,7 +26,7 @@ export class SmsService {
           role: 'cancel',
           cssClass: 'secondary',
           handler: () => {
-            console.log('Confirm Cancel');
+            console.log('');
           }
         }, {
           text: 'Send',
