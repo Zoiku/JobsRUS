@@ -9,6 +9,7 @@ export class AuthService {
 
   constructor(private auth: AngularFireAuth) {}
 
+  // Methods to use the firebase api
   async getcurrentEmail():Promise<firebase.User> {
     return this.auth.currentUser
   }
@@ -35,6 +36,7 @@ export class AuthService {
     return this.auth.sendPasswordResetEmail(email)
   }
 
+  // Sign Out method
   signOut() {
     this.auth.signOut()
       .catch(err => err)
