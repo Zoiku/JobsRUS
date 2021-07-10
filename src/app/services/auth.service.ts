@@ -21,14 +21,14 @@ export class AuthService {
     return this.auth.signInWithEmailAndPassword(email, password);
   }
 
-  async googleSignIn():Promise<firebase.auth.UserCredential> {
+  async googleSignIn() {
    await this.auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-    return this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider);
+    return this.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider)
   }
 
-  async facebookSignIn():Promise<firebase.auth.UserCredential> {
+  async facebookSignIn() {
     await this.auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-    return this.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider);
+    return this.auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider);
   }
 
   resetPassword(email:string):Promise<void> {

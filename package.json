@@ -20,6 +20,7 @@
     "@angular/platform-browser": "~11.2.0",
     "@angular/platform-browser-dynamic": "~11.2.0",
     "@angular/router": "~11.2.0",
+    "@ionic-native/core": "^5.32.1",
     "@ionic-native/http": "^5.32.1",
     "@ionic-native/sms": "^5.32.1",
     "@ionic-native/splash-screen": "^5.32.1",
@@ -81,7 +82,9 @@
       "cordova-plugin-statusbar": {},
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
-      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-webview": {
+        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+      },
       "cordova-plugin-ionic-keyboard": {},
       "cordova-sms-plugin": {}
     },
